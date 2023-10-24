@@ -24,3 +24,17 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gallery li {
+  list-style: none;
+}
+
+.gallery img {
+  max-width: 700px;
+  padding: 20px 0;
+}
