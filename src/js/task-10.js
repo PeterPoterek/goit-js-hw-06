@@ -14,12 +14,10 @@ function getRandomHexColor() {
 }
 const handleInputValueChange = (e) => {
   count = e.target.value;
-  console.log(count);
 };
-const handleCreateButtonClick = () => {
-  console.log("click");
-
-  for (let i = 0; i < count; i++) {
+const createBoxes = (amount) => {
+  count = amount;
+  for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `${baseStats}px`;
     box.style.height = `${baseStats}px`;
@@ -30,9 +28,10 @@ const handleCreateButtonClick = () => {
   }
 };
 
-const handleDestroyButtonClick = () => {
-  const boxesToDestroy = boxesConatiner.querySelectorAll("div");
+const destroyBoxes = () => {
   baseStats = 30;
+
+  const boxesToDestroy = boxesConatiner.querySelectorAll("div");
   for (const box of boxesToDestroy) {
     box.remove();
   }
@@ -40,5 +39,5 @@ const handleDestroyButtonClick = () => {
 
 controls.addEventListener("change", handleInputValueChange);
 
-createButton.addEventListener("click", handleCreateButtonClick);
-destroyButton.addEventListener("click", handleDestroyButtonClick);
+createButton.addEventListener("click", () => createBoxes(count));
+destroyButton.addEventListener("click", destroyBoxes);
