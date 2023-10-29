@@ -2,6 +2,7 @@ const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Con
 
 const list = document.querySelector("#ingredients");
 const liArr = [];
+
 ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
   li.setAttribute("class", "item");
